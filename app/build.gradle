@@ -1,0 +1,80 @@
+//noinspection GradleCompatible
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.app.shiaw"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 2
+        versionName "2.1"
+        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [onesignal_app_id: "b1a4b238-ca9e-453d-99d6-df4455bef237",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes.each{
+        it.buildConfigField 'String', 'SERVER_URL', SERVER_URL
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    buildToolsVersion = '29.0.2'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('androidx.test:runner:1.1.0') {
+        // Necessary if your app targets Marshmallow (since Espresso
+        // hasn't moved to Marshmallow yet)
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0') {
+        // Necessary if your app targets Marshmallow (since Espresso
+        // hasn't moved to Marshmallow yet)
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.7'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation 'com.onesignal:OneSignal:3.9.2'
+    implementation 'com.facebook.fresco:fresco:1.2.0'
+    implementation 'com.facebook.fresco:animated-gif:1.2.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

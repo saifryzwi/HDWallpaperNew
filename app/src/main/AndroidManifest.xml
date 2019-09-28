@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.shiaw"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+
+    <application
+        android:name="com.app.shiaw.MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:allowBackup="true">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2694891404265468~8261725131"/>
+
+        <uses-library android:name ="org.apache.http.legacy" android:required ="false"/>
+
+        <activity android:name="com.app.shiaw.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.app.shiaw.MainActivity"
+            android:label="@string/title_activity_main"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name="com.app.shiaw.AboutActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.app.shiaw.WallpaperActivity"
+            android:label="@string/title_activity_wallpaper"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.WallpaperByCatActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.WallPaperDetailsActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name="com.app.shiaw.FavouriteActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.GIFActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.GIFsDetailsActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name="com.app.shiaw.SearchWallActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.SearchGIFActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.app.shiaw.SettingActivity"
+            android:configChanges="orientation|screenSize"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Activity required to show ad overlays. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <service
+            android:name="com.app.utils.NotificationExtenderExample"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

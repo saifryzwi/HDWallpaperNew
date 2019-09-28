@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "586585172801",
+    "firebase_url": "https://k-shia-wallpaper.firebaseio.com",
+    "project_id": "k-shia-wallpaper",
+    "storage_bucket": "k-shia-wallpaper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586585172801:android:1636b97d25e0eb74",
+        "android_client_info": {
+          "package_name": "com.app.shiaw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586585172801-eufovb0g9mcmhcq2o9i4kllabmtr3lhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW0KbL2Gu09uThB8bGAwxNbnxI27G4f5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586585172801-eufovb0g9mcmhcq2o9i4kllabmtr3lhj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

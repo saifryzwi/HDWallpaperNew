@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c61832</color>
+    <color name="colorPrimaryDark">#6e0b0f</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="gradient_color_1">#54000d</color>
+    <color name="gradient_color_2">#b90410</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black80">#80000000</color>
+    <color name="grid_back_color">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_aa">#aa000000</color>
+    <color name="white30">#30ffffff</color>
+    <color name="white80">#80ffffff</color>
+    <color name="rating">#f99120</color>
+    <color name="red">#ff0000</color>
+</resources>
